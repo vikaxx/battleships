@@ -22,8 +22,7 @@ public class SeaWar {
         int col, num;
         boolean isFirstRow, isFirstCol, isLastRow, isLastCol;
         boolean noNeibourUp, noNeibourDown, noNeibourLeft, noNeibourRight;
-        int is4sunk = 1; // 0 - если потоплен четырехпалубный
-        int is3sunk = 2; // 0 - если потоплены оба трехпалубных
+
 
         boolean isWin = false;
         while (!isWin) {
@@ -31,7 +30,13 @@ public class SeaWar {
             outPut(field);
             System.out.print("\nMake a shot (letter + number) : ");
             alpha = in.next().charAt(0);
-            num = in.nextInt() - 1;
+            if (in.hasNextInt()) {
+                num = in.nextInt() - 1;
+            } else {
+                System.out.println("Number should be from 1 to 10.");
+                in.next();
+                continue;
+            }
 
             switch (alpha) {
                 case 'a':
@@ -77,71 +82,112 @@ public class SeaWar {
             isFirstCol = col < 1;
             isLastRow = num > 8;
             isLastCol = col > 8;
+
             noNeibourUp = false;
             noNeibourDown = false;
             noNeibourLeft = false;
             noNeibourRight = false;
 
+            int currentShot = field[num][col];
+            int currentShotUp = 10;
+            int currentShotDown = 10;
+            int currentShotLeft = 10;
+            int currentShotRight = 10;
 
-            if (field[num][col] == 1) {
-                System.out.println("Cool shot!");
-                if (!isFirstRow) {
-                    if (field[num - 1][col] == 1) { //////////////// если не в первой строке
-                        System.out.println("The ship is shot.");
-                        field[num][col] = 2;
-                    } else if (field[num - 1][col] == 2) {
-                        System.out.println("The last hit. The ship is sunk."); // только для двупалубных
-                        field[num][col] = 3;
-                        field[num - 1][col] = 3;
-                    } else noNeibourUp = true; /// если нет корабля
-                } else noNeibourUp = true; //// если нет поля
-                if (!isFirstCol) {
-                    if (field[num][col - 1] == 1) { //////////////// если не в первом столбце
-                        System.out.println("The ship is shot.");
-                        field[num][col] = 2;
-                    } else if (field[num][col - 1] == 2) {
-                        System.out.println("The last hit. The ship is sunk.");
-                        field[num][col] = 3;
-                        field[num][col - 1] = 3;
-                    } else noNeibourLeft = true;
-                } else noNeibourLeft = true;
-                if (!isLastRow) {
-                    if (field[num + 1][col] == 1) {  //////////////// если не в последней строке
-                        System.out.println("The ship is shot.");
-                        field[num][col] = 2;
-                    } else if (field[num + 1][col] == 2) {
-                        System.out.println("The last hit. The ship is sunk.");
-                        field[num][col] = 3;
-                        field[num + 1][col] = 3;
-                    } else noNeibourDown = true;
-                } else noNeibourDown = true;
-                if (!isLastCol) {
-                    if (field[num][col + 1] == 1) {  //////////////// если не в последнем столбце
-                        System.out.println("The ship is shot.");
-                        field[num][col] = 2;
-                    } else if (field[num][col + 1] == 2) {
-                        System.out.println("The last hit. The ship is sunk.");
-                        field[num][col] = 3;
-                        field[num][col + 1] = 3;
-                    } else noNeibourRight = true;
-                } else noNeibourRight = true;
+            if (!isFirstRow) currentShotUp = field[num - 1][col];
+            if (!isLastRow) currentShotDown = field[num + 1][col];
+            if (!isFirstCol) currentShotLeft = field[num][col - 1];
+            if (!isLastCol) currentShotRight = field[num][col + 1];
 
-                if (noNeibourUp && noNeibourDown && noNeibourLeft && noNeibourRight) { //////////// если над-под-слева-справа нет кораблей
-                    System.out.println("The ship is sunk.");
-                    field[num][col] = 3; // однопалубный
-                }
-            } else if (field[num][col] == 2 || field[num][col] == 3 || field[num][col] == 4) {
-                System.out.println("Was already hit or miss. Try one more time.");
-            } else {
-                System.out.println("Miss. Try one more time.");
-                field[num][col] = 4;
+            switch (currentShot) {
+                case 0:
+                    System.out.println("Miss. Try one more time.");
+                    field[num][col] = 4;
+                    continue;
+                case 1: // корректно работает только для одно- и двупалубных
+                    System.out.println("Cool shot!");
+
+                    switch (currentShotUp) {
+                        case 1:
+                            System.out.println("The ship is shot.");
+                            field[num][col] = 2;
+                            break;
+                        case 2:
+                            System.out.println("The last hit. The ship is sunk.");
+                            field[num][col] = 3;
+                            field[num - 1][col] = 3;
+                            break;
+                        default:
+                            noNeibourUp = true;
+                    }
+
+                    switch (currentShotLeft) {
+                        case 1:
+                            System.out.println("The ship is shot.");
+                            field[num][col] = 2;
+                            break;
+                        case 2:
+                            System.out.println("The last hit. The ship is sunk.");
+                            field[num][col] = 3;
+                            field[num][col - 1] = 3;
+                            break;
+                        default:
+                            noNeibourLeft = true;
+                    }
+
+
+                    switch (currentShotDown) {
+                        case 1:
+                            System.out.println("The ship is shot.");
+                            field[num][col] = 2;
+                            break;
+                        case 2:
+                            System.out.println("The last hit. The ship is sunk.");
+                            field[num][col] = 3;
+                            field[num + 1][col] = 3;
+                            break;
+                        default:
+                            noNeibourDown = true;
+                    }
+
+                    switch (currentShotRight) {
+                        case 1:
+                            System.out.println("The ship is shot.");
+                            field[num][col] = 2;
+                            break;
+                        case 2:
+                            System.out.println("The last hit. The ship is sunk.");
+                            field[num][col] = 3;
+                            field[num][col + 1] = 3;
+                            break;
+                        default:
+                            noNeibourRight = true;
+                    }
+
+                    if (noNeibourUp && noNeibourDown && noNeibourLeft && noNeibourRight) { //////////// если над-под-слева-справа нет кораблей
+                        System.out.println("The ship is sunk.");
+                        field[num][col] = 3; // однопалубный
+                    }
+
+                    break;
+                case 2:
+                    System.out.println("Was already hit. Try one more time.");
+                    break;
+                case 3:
+                    System.out.println("Was already sunk. Try one more time.");
+                    break;
+                case 4:
+                    System.out.println("Was already miss. Try one more time.");
+                    break;
+
             }
+
             isWin = true;
             for (int i = 0; i < field.length; i++) {
                 for (int j = 0; j < field.length; j++) {
                     if (field[i][j] == 1) {
                         isWin = false; // условие продолжения цикла, т.е остались непотопленные корабли
-                        break;
+                        break; // достаточно одного непотопленного корабля чтобы продолжать игру
                     }
                 }
             }
