@@ -370,6 +370,15 @@ public class SeaWar {
 //                {0, 0, 0, 0, 1, 0, 0, 0, 0, 0}  // 10
 //        };
         addShips(4, field);
+        addShips(3, field);
+        addShips(3, field);
+        addShips(2, field);
+        addShips(2, field);
+        addShips(2, field);
+        addShips(1, field);
+        addShips(1, field);
+        addShips(1, field);
+        addShips(1, field);
 
 
         return field;
@@ -379,22 +388,87 @@ public class SeaWar {
         return ((int) (Math.random() * 2) % 2 == 0);
     }
 
-    public static Integer[][] addShips(int size, Integer[][] field) {
+    public static void addShips(int size, Integer[][] field) {
         boolean isHorizontal = isHorizontalShip();
 
+        int row = (int) (Math.random() * (field.length - size + 1));
+        int col = (int) (Math.random() * (field.length - size + 1));
+        if (isShipAllowedHere(row, col, field, isHorizontal, size)) {
+            for (int i = 0; i < size; i++) {
+                if (isHorizontal) {
+                    field[row + i][col] = 1;
+                } else {
+                    field[row][col + i] = 1;
+                }
+            }
+        } else {
+            addShips(size, field);
+        }
+    }
 
-        int row = (int) (Math.random() * (10 - size + 1));
-        int col = (int) (Math.random() * (10 - size + 1));
-//        field[row][col] = 1;
-        for (int i = 0; i < size; i++) {
-            if (isHorizontal) {
-                field[row + i][col] = 1;
-            } else {
-                field[row][col + i] = 1;
+    public static boolean isShipAllowedHere(int row, int col, Integer[][] field, boolean isHorizontal, int size) {
+        boolean temp = false;
+        if (field[row][col] == 1) return false;
+        for (int i = -1; i < size + 1; i++) {
+            for (int j = -1; j < 2; j++) {
+                if (isHorizontal) {
+                    try {
+                        temp = field[row + i][col + j] == 1;
+                        if (temp) return false;
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                    }
+
+                } else {
+                    try {
+                        temp = field[row + j][col + i] == 1;
+                        if (temp) return false;
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                    }
+
+                }
             }
         }
+        try {
+            temp = field[row - 1][col - 1] == 1;
+            if (temp) return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
 
-        return field;
+
+        try {
+            temp = field[row - 1][col + 1] == 1;
+            if (temp) return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+
+        try {
+            temp = field[row + size + 1][col + 1] == 1;
+            if (temp) return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+
+        try {
+            temp = field[row + size + 1][col - 1] == 1;
+            if (temp) return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+        try {
+            temp = field[row][col - 1] == 1;
+            if (temp) return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+        try {
+            temp = field[row + size + 1][col] == 1;
+            if (temp) return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+
+        return true;
     }
 
 
