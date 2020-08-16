@@ -20,7 +20,6 @@ public class SeaWar {
         Scanner in = new Scanner(System.in);
         char alpha;
         int col, num;
-        boolean isFirstRow, isFirstCol, isLastRow, isLastCol;
         boolean noNeibourUp, noNeibourDown, noNeibourLeft, noNeibourRight;
 
 
@@ -78,26 +77,34 @@ public class SeaWar {
                 continue;
             }
 
-            isFirstRow = num < 1;
-            isFirstCol = col < 1;
-            isLastRow = num > 8;
-            isLastCol = col > 8;
-
             noNeibourUp = false;
             noNeibourDown = false;
             noNeibourLeft = false;
             noNeibourRight = false;
 
             int currentShot = field[num][col];
-            int currentShotUp = 10;
-            int currentShotDown = 10;
-            int currentShotLeft = 10;
-            int currentShotRight = 10;
 
-            if (!isFirstRow) currentShotUp = field[num - 1][col];
-            if (!isLastRow) currentShotDown = field[num + 1][col];
-            if (!isFirstCol) currentShotLeft = field[num][col - 1];
-            if (!isLastCol) currentShotRight = field[num][col + 1];
+            int currentShotUp = 9;
+            int currentShotDown = 9;
+            int currentShotLeft = 9;
+            int currentShotRight = 9;
+
+            try {
+                currentShotUp = field[num - 1][col];
+            } catch (Exception e) {
+            }
+            try {
+                currentShotDown = field[num + 1][col];
+            } catch (Exception e) {
+            }
+            try {
+                currentShotLeft = field[num][col - 1];
+            } catch (Exception e) {
+            }
+            try {
+                currentShotRight = field[num][col + 1];
+            } catch (Exception e) {
+            }
 
             switch (currentShot) {
                 case 0:
