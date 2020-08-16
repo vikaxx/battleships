@@ -77,104 +77,224 @@ public class SeaWar {
                 continue;
             }
 
-            noNeibourUp = false;
-            noNeibourDown = false;
-            noNeibourLeft = false;
-            noNeibourRight = false;
+//            noNeibourUp = false;
+//            noNeibourDown = false;
+//            noNeibourLeft = false;
+//            noNeibourRight = false;
 
             int currentShot = field[num][col];
 
-            int currentShotUp = 9;
-            int currentShotDown = 9;
-            int currentShotLeft = 9;
-            int currentShotRight = 9;
+
+//            int currentShotUp = 9;
+//            int currentShotDown = 9;
+//            int currentShotLeft = 9;
+//            int currentShotRight = 9;
+
+            int[] ups = new int[3];
+            int[] downs = new int[3];
+            int[] lefts = new int[3];
+            int[] rights = new int[3];
+
+            int upsQuantity = 0, downsQuantity = 0, leftsQuantity = 0, rightsQuantity = 0;
+
+//            try {
+//                currentShotUp = field[num - 1][col];
+//            } catch (ArrayIndexOutOfBoundsException e) {
+//                noNeibourUp = true;
+//            }
+//            try {
+//                currentShotDown = field[num + 1][col];
+//            } catch (ArrayIndexOutOfBoundsException e) {
+//                noNeibourDown = true;
+//            }
+//            try {
+//                currentShotLeft = field[num][col - 1];
+//            } catch (ArrayIndexOutOfBoundsException e) {
+//                noNeibourLeft = true;
+//            }
+//            try {
+//                currentShotRight = field[num][col + 1];
+//            } catch (ArrayIndexOutOfBoundsException e) {
+//                noNeibourRight = true;
+//            }
+
 
             try {
-                currentShotUp = field[num - 1][col];
-            } catch (Exception e) {
+                for (int i = 0; i < 3; i++) {
+                    ups[i] = field[num - i - 1][col];
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+
             }
+
             try {
-                currentShotDown = field[num + 1][col];
-            } catch (Exception e) {
+                for (int i = 0; i < 3; i++) {
+                    downs[i] = field[num + i + 1][col];
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+
             }
+
             try {
-                currentShotLeft = field[num][col - 1];
-            } catch (Exception e) {
+                for (int i = 0; i < 3; i++) {
+                    lefts[i] = field[num][col - i - 1];
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+
             }
+
             try {
-                currentShotRight = field[num][col + 1];
-            } catch (Exception e) {
+                for (int i = 0; i < 3; i++) {
+                    rights[i] = field[num][col + i + 1];
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+
             }
+
+
+            for (int i = 0; i < 3; i++) {
+                if (ups[i] == 1 || ups[i] == 2) upsQuantity++;
+                else break;
+            }
+            for (int i = 0; i < 3; i++) {
+                if (downs[i] == 1 || downs[i] == 2) downsQuantity++;
+                else break;
+            }
+            for (int i = 0; i < 3; i++) {
+                if (lefts[i] == 1 || lefts[i] == 2) leftsQuantity++;
+                else break;
+            }
+            for (int i = 0; i < 3; i++) {
+                if (rights[i] == 1 || rights[i] == 2) rightsQuantity++;
+                else break;
+            }
+
+//            System.out.println(upsQuantity + " " + downsQuantity + " " + leftsQuantity + " " + rightsQuantity);
+            if (currentShot == 1 || currentShot == 2)
+                System.out.println("ship size is " + (upsQuantity + leftsQuantity + rightsQuantity + downsQuantity + 1));
 
             switch (currentShot) {
                 case 0:
                     System.out.println("Miss. Try one more time.");
                     field[num][col] = 4;
                     continue;
-                case 1: // корректно работает только для одно- и двупалубных
+                case 1:
                     System.out.println("Cool shot!");
 
-                    switch (currentShotUp) {
-                        case 1:
-                            System.out.println("The ship is shot.");
-                            field[num][col] = 2;
+//                    switch (currentShotUp) {
+//                        case 1:
+//                            System.out.println("The ship is shot.");
+//                            field[num][col] = 2;
+//                            break;
+//                        case 2:
+//                            System.out.println("The last hit. The ship is sunk.");
+//                            field[num][col] = 3;
+//                            field[num - 1][col] = 3;
+//                            break;
+//                        default:
+//                            noNeibourUp = true;
+//                    }
+//
+//                    switch (currentShotLeft) {
+//                        case 1:
+//                            System.out.println("The ship is shot.");
+//                            field[num][col] = 2;
+//                            break;
+//                        case 2:
+//                            System.out.println("The last hit. The ship is sunk.");
+//                            field[num][col] = 3;
+//                            field[num][col - 1] = 3;
+//                            break;
+//                        default:
+//                            noNeibourLeft = true;
+//                    }
+//
+//
+//                    switch (currentShotDown) {
+//                        case 1:
+//                            System.out.println("The ship is shot.");
+//                            field[num][col] = 2;
+//                            break;
+//                        case 2:
+//                            System.out.println("The last hit. The ship is sunk.");
+//                            field[num][col] = 3;
+//                            field[num + 1][col] = 3;
+//                            break;
+//                        default:
+//                            noNeibourDown = true;
+//                    }
+//
+//                    switch (currentShotRight) {
+//                        case 1:
+//                            System.out.println("The ship is shot.");
+//                            field[num][col] = 2;
+//                            break;
+//                        case 2:
+//                            System.out.println("The last hit. The ship is sunk.");
+//                            field[num][col] = 3;
+//                            field[num][col + 1] = 3;
+//                            break;
+//                        default:
+//                            noNeibourRight = true;
+//                    }
+
+//                    if (noNeibourUp && noNeibourDown && noNeibourLeft && noNeibourRight) { //////////// если над-под-слева-справа нет кораблей
+//                        System.out.println("The ship is sunk.");
+//                        field[num][col] = 3; // однопалубный
+//                    }
+
+                    // проверка, не последний ли это выстрел в корабль
+                    boolean isLastShot;
+                    boolean isLastUpShot = true;
+                    boolean isLastDownShot = true;
+                    boolean isLastLeftShot = true;
+                    boolean isLastRightShot = true;
+
+                    for (int i = 0; i < upsQuantity; i++) {
+                        if (field[num - i - 1][col] != 2) {
+                            isLastUpShot = false;
                             break;
-                        case 2:
-                            System.out.println("The last hit. The ship is sunk.");
-                            field[num][col] = 3;
-                            field[num - 1][col] = 3;
+                        }
+                    }
+                    for (int i = 0; i < downsQuantity; i++) {
+                        if (field[num + i + 1][col] != 2) {
+                            isLastDownShot = false;
                             break;
-                        default:
-                            noNeibourUp = true;
+                        }
+                    }
+                    for (int i = 0; i < leftsQuantity; i++) {
+                        if (field[num][col - i - 1] != 2) {
+                            isLastLeftShot = false;
+                            break;
+                        }
+                    }
+                    for (int i = 0; i < rightsQuantity; i++) {
+                        if (field[num][col + i + 1] != 2) {
+                            isLastRightShot = false;
+                            break;
+                        }
                     }
 
-                    switch (currentShotLeft) {
-                        case 1:
-                            System.out.println("The ship is shot.");
-                            field[num][col] = 2;
-                            break;
-                        case 2:
-                            System.out.println("The last hit. The ship is sunk.");
-                            field[num][col] = 3;
-                            field[num][col - 1] = 3;
-                            break;
-                        default:
-                            noNeibourLeft = true;
+                    isLastShot = isLastUpShot && isLastDownShot && isLastLeftShot && isLastRightShot;
+
+                    if (isLastShot) {
+                        field[num][col] = 3;
+                        for (int i = 0; i < upsQuantity; i++) {
+                            field[num - i - 1][col] = 3;
+                        }
+                        for (int i = 0; i < downsQuantity; i++) {
+                            field[num + i + 1][col] = 3;
+                        }
+                        for (int i = 0; i < leftsQuantity; i++) {
+                            field[num][col - i - 1] = 3;
+                        }
+                        for (int i = 0; i < rightsQuantity; i++) {
+                            field[num][col + i + 1] = 3;
+                        }
+                    } else {
+                        field[num][col] = 2;
                     }
 
-
-                    switch (currentShotDown) {
-                        case 1:
-                            System.out.println("The ship is shot.");
-                            field[num][col] = 2;
-                            break;
-                        case 2:
-                            System.out.println("The last hit. The ship is sunk.");
-                            field[num][col] = 3;
-                            field[num + 1][col] = 3;
-                            break;
-                        default:
-                            noNeibourDown = true;
-                    }
-
-                    switch (currentShotRight) {
-                        case 1:
-                            System.out.println("The ship is shot.");
-                            field[num][col] = 2;
-                            break;
-                        case 2:
-                            System.out.println("The last hit. The ship is sunk.");
-                            field[num][col] = 3;
-                            field[num][col + 1] = 3;
-                            break;
-                        default:
-                            noNeibourRight = true;
-                    }
-
-                    if (noNeibourUp && noNeibourDown && noNeibourLeft && noNeibourRight) { //////////// если над-под-слева-справа нет кораблей
-                        System.out.println("The ship is sunk.");
-                        field[num][col] = 3; // однопалубный
-                    }
 
                     break;
                 case 2:
