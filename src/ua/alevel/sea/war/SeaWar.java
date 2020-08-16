@@ -428,44 +428,7 @@ public class SeaWar {
                 }
             }
         }
-        try {
-            temp = field[row - 1][col - 1] == 1;
-            if (temp) return false;
-        } catch (ArrayIndexOutOfBoundsException e) {
-        }
-
-
-        try {
-            temp = field[row - 1][col + 1] == 1;
-            if (temp) return false;
-        } catch (ArrayIndexOutOfBoundsException e) {
-        }
-
-
-        try {
-            temp = field[row + size + 1][col + 1] == 1;
-            if (temp) return false;
-        } catch (ArrayIndexOutOfBoundsException e) {
-        }
-
-
-        try {
-            temp = field[row + size + 1][col - 1] == 1;
-            if (temp) return false;
-        } catch (ArrayIndexOutOfBoundsException e) {
-        }
-
-        try {
-            temp = field[row][col - 1] == 1;
-            if (temp) return false;
-        } catch (ArrayIndexOutOfBoundsException e) {
-        }
-
-        try {
-            temp = field[row + size + 1][col] == 1;
-            if (temp) return false;
-        } catch (ArrayIndexOutOfBoundsException e) {
-        }
+        
 
 
         return true;
