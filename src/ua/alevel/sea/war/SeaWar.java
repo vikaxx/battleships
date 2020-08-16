@@ -64,18 +64,7 @@ public class SeaWar {
                 continue;
             }
 
-//            noNeibourUp = false;
-//            noNeibourDown = false;
-//            noNeibourLeft = false;
-//            noNeibourRight = false;
-
             int currentShot = field[num][col];
-
-
-//            int currentShotUp = 9;
-//            int currentShotDown = 9;
-//            int currentShotLeft = 9;
-//            int currentShotRight = 9;
 
             int[] ups = new int[3];
             int[] downs = new int[3];
@@ -83,28 +72,6 @@ public class SeaWar {
             int[] rights = new int[3];
 
             int upsQuantity = 0, downsQuantity = 0, leftsQuantity = 0, rightsQuantity = 0;
-
-//            try {
-//                currentShotUp = field[num - 1][col];
-//            } catch (ArrayIndexOutOfBoundsException e) {
-//                noNeibourUp = true;
-//            }
-//            try {
-//                currentShotDown = field[num + 1][col];
-//            } catch (ArrayIndexOutOfBoundsException e) {
-//                noNeibourDown = true;
-//            }
-//            try {
-//                currentShotLeft = field[num][col - 1];
-//            } catch (ArrayIndexOutOfBoundsException e) {
-//                noNeibourLeft = true;
-//            }
-//            try {
-//                currentShotRight = field[num][col + 1];
-//            } catch (ArrayIndexOutOfBoundsException e) {
-//                noNeibourRight = true;
-//            }
-
 
             try {
                 for (int i = 0; i < 3; i++) {
@@ -156,10 +123,6 @@ public class SeaWar {
                 else break;
             }
 
-//            System.out.println(upsQuantity + " " + downsQuantity + " " + leftsQuantity + " " + rightsQuantity);
-//            if (currentShot == 1 || currentShot == 2)
-//                System.out.println("ship size is " + (upsQuantity + leftsQuantity + rightsQuantity + downsQuantity + 1));
-
             switch (currentShot) {
                 case 0:
                     System.out.println("Miss. Try one more time.");
@@ -168,69 +131,6 @@ public class SeaWar {
                 case 1:
                     System.out.println("Cool shot!");
 
-//                    switch (currentShotUp) {
-//                        case 1:
-//                            System.out.println("The ship is shot.");
-//                            field[num][col] = 2;
-//                            break;
-//                        case 2:
-//                            System.out.println("The last hit. The ship is sunk.");
-//                            field[num][col] = 3;
-//                            field[num - 1][col] = 3;
-//                            break;
-//                        default:
-//                            noNeibourUp = true;
-//                    }
-//
-//                    switch (currentShotLeft) {
-//                        case 1:
-//                            System.out.println("The ship is shot.");
-//                            field[num][col] = 2;
-//                            break;
-//                        case 2:
-//                            System.out.println("The last hit. The ship is sunk.");
-//                            field[num][col] = 3;
-//                            field[num][col - 1] = 3;
-//                            break;
-//                        default:
-//                            noNeibourLeft = true;
-//                    }
-//
-//
-//                    switch (currentShotDown) {
-//                        case 1:
-//                            System.out.println("The ship is shot.");
-//                            field[num][col] = 2;
-//                            break;
-//                        case 2:
-//                            System.out.println("The last hit. The ship is sunk.");
-//                            field[num][col] = 3;
-//                            field[num + 1][col] = 3;
-//                            break;
-//                        default:
-//                            noNeibourDown = true;
-//                    }
-//
-//                    switch (currentShotRight) {
-//                        case 1:
-//                            System.out.println("The ship is shot.");
-//                            field[num][col] = 2;
-//                            break;
-//                        case 2:
-//                            System.out.println("The last hit. The ship is sunk.");
-//                            field[num][col] = 3;
-//                            field[num][col + 1] = 3;
-//                            break;
-//                        default:
-//                            noNeibourRight = true;
-//                    }
-
-//                    if (noNeibourUp && noNeibourDown && noNeibourLeft && noNeibourRight) { //////////// если над-под-слева-справа нет кораблей
-//                        System.out.println("The ship is sunk.");
-//                        field[num][col] = 3; // однопалубный
-//                    }
-
-                    // проверка, не последний ли это выстрел в корабль
                     boolean isLastShot;
                     boolean isLastUpShot = true;
                     boolean isLastDownShot = true;
@@ -356,19 +256,6 @@ public class SeaWar {
             }
         }
 
-//        Integer[][] field = {
-//                //a b  c  d  e  f  g  h  i  j
-//                {0, 0, 0, 0, 0, 0, 0, 0, 1, 0}, // 1
-//                {1, 0, 0, 0, 1, 0, 1, 0, 1, 0}, // 2
-//                {0, 0, 0, 0, 0, 0, 1, 0, 0, 0}, // 3
-//                {0, 0, 0, 0, 0, 0, 1, 0, 1, 0}, // 4
-//                {1, 0, 1, 0, 0, 0, 0, 0, 1, 0}, // 5
-//                {0, 0, 0, 0, 0, 0, 0, 0, 1, 0}, // 6
-//                {1, 0, 0, 0, 0, 0, 0, 0, 1, 0}, // 7
-//                {1, 0, 0, 0, 1, 0, 0, 0, 0, 0}, // 8
-//                {0, 0, 0, 0, 1, 0, 0, 1, 1, 0}, // 9
-//                {0, 0, 0, 0, 1, 0, 0, 0, 0, 0}  // 10
-//        };
         addShips(4, field);
         addShips(3, field);
         addShips(3, field);
@@ -417,20 +304,15 @@ public class SeaWar {
                         if (temp) return false;
                     } catch (ArrayIndexOutOfBoundsException e) {
                     }
-
                 } else {
                     try {
                         temp = field[row + j][col + i] == 1;
                         if (temp) return false;
                     } catch (ArrayIndexOutOfBoundsException e) {
                     }
-
                 }
             }
         }
-        
-
-
         return true;
     }
 
