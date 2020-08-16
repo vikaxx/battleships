@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15f5d7cd-797f-4f4a-b39b-fa5e3c573d95" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/SeaWarProject/ua/alevel/sea/war/SeaWar.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java" afterPath="$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,14 +18,17 @@
       <file leaf-file-name="SeaWar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1577">
-              <caret line="294" column="44" lean-forward="false" selection-start-line="294" selection-start-column="44" selection-end-line="294" selection-end-column="44" />
+            <state relative-caret-position="255">
+              <caret line="386" column="56" lean-forward="false" selection-start-line="386" selection-start-column="56" selection-end-line="386" selection-end-column="56" />
               <folding>
-                <element signature="e#2519#2553#0" expanded="false" />
-                <element signature="e#2716#2752#0" expanded="false" />
-                <element signature="e#3116#3135#0" expanded="false" />
-                <element signature="e#5906#5952#0" expanded="false" />
-                <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+                <element signature="e#1862#1896#0" expanded="false" />
+                <element signature="e#2059#2095#0" expanded="false" />
+                <element signature="e#2459#2478#0" expanded="false" />
+                <element signature="e#4681#4794#0" expanded="false" />
+                <element signature="e#5253#5299#0" expanded="false" />
+                <element signature="e#12816#12847#0" expanded="false" />
+                <element signature="e#13564#13565#0" expanded="true" />
+                <element signature="e#13623#13624#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,6 +81,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -94,10 +101,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,6 +268,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1386" height="738" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -274,7 +278,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6921797" sideWeight="0.50584793" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3793677" sideWeight="0.49415204" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53078204" sideWeight="0.49415204" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -299,7 +303,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -309,11 +313,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2519#2553#0" expanded="false" />
-            <element signature="e#2716#2752#0" expanded="false" />
-            <element signature="e#3116#3135#0" expanded="false" />
-            <element signature="e#5906#5952#0" expanded="false" />
-            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="e#1862#1896#0" expanded="false" />
+            <element signature="e#2059#2095#0" expanded="false" />
+            <element signature="e#2459#2478#0" expanded="false" />
+            <element signature="e#4681#4794#0" expanded="false" />
+            <element signature="e#5253#5299#0" expanded="false" />
+            <element signature="e#12816#12847#0" expanded="false" />
+            <element signature="e#13564#13565#0" expanded="true" />
+            <element signature="e#13623#13624#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -323,11 +330,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2519#2553#0" expanded="false" />
-            <element signature="e#2716#2752#0" expanded="false" />
-            <element signature="e#3116#3135#0" expanded="false" />
-            <element signature="e#5906#5952#0" expanded="false" />
-            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="e#1862#1896#0" expanded="false" />
+            <element signature="e#2059#2095#0" expanded="false" />
+            <element signature="e#2459#2478#0" expanded="false" />
+            <element signature="e#4681#4794#0" expanded="false" />
+            <element signature="e#5253#5299#0" expanded="false" />
+            <element signature="e#12816#12847#0" expanded="false" />
+            <element signature="e#13564#13565#0" expanded="true" />
+            <element signature="e#13623#13624#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -337,11 +347,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2519#2553#0" expanded="false" />
-            <element signature="e#2716#2752#0" expanded="false" />
-            <element signature="e#3116#3135#0" expanded="false" />
-            <element signature="e#5906#5952#0" expanded="false" />
-            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="e#1862#1896#0" expanded="false" />
+            <element signature="e#2059#2095#0" expanded="false" />
+            <element signature="e#2459#2478#0" expanded="false" />
+            <element signature="e#4681#4794#0" expanded="false" />
+            <element signature="e#5253#5299#0" expanded="false" />
+            <element signature="e#12816#12847#0" expanded="false" />
+            <element signature="e#13564#13565#0" expanded="true" />
+            <element signature="e#13623#13624#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -351,11 +364,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2519#2553#0" expanded="false" />
-            <element signature="e#2716#2752#0" expanded="false" />
-            <element signature="e#3116#3135#0" expanded="false" />
-            <element signature="e#5906#5952#0" expanded="false" />
-            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="e#1862#1896#0" expanded="false" />
+            <element signature="e#2059#2095#0" expanded="false" />
+            <element signature="e#2459#2478#0" expanded="false" />
+            <element signature="e#4681#4794#0" expanded="false" />
+            <element signature="e#5253#5299#0" expanded="false" />
+            <element signature="e#12816#12847#0" expanded="false" />
+            <element signature="e#13564#13565#0" expanded="true" />
+            <element signature="e#13623#13624#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -365,11 +381,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2519#2553#0" expanded="false" />
-            <element signature="e#2716#2752#0" expanded="false" />
-            <element signature="e#3116#3135#0" expanded="false" />
-            <element signature="e#5906#5952#0" expanded="false" />
-            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="e#1862#1896#0" expanded="false" />
+            <element signature="e#2059#2095#0" expanded="false" />
+            <element signature="e#2459#2478#0" expanded="false" />
+            <element signature="e#4681#4794#0" expanded="false" />
+            <element signature="e#5253#5299#0" expanded="false" />
+            <element signature="e#12816#12847#0" expanded="false" />
+            <element signature="e#13564#13565#0" expanded="true" />
+            <element signature="e#13623#13624#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -379,11 +398,31 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2519#2553#0" expanded="false" />
-            <element signature="e#2716#2752#0" expanded="false" />
-            <element signature="e#3116#3135#0" expanded="false" />
-            <element signature="e#5906#5952#0" expanded="false" />
-            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="e#1862#1896#0" expanded="false" />
+            <element signature="e#2059#2095#0" expanded="false" />
+            <element signature="e#2459#2478#0" expanded="false" />
+            <element signature="e#4681#4794#0" expanded="false" />
+            <element signature="e#5253#5299#0" expanded="false" />
+            <element signature="e#12816#12847#0" expanded="false" />
+            <element signature="e#13564#13565#0" expanded="true" />
+            <element signature="e#13623#13624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1862#1896#0" expanded="false" />
+            <element signature="e#2059#2095#0" expanded="false" />
+            <element signature="e#2459#2478#0" expanded="false" />
+            <element signature="e#4681#4794#0" expanded="false" />
+            <element signature="e#5253#5299#0" expanded="false" />
+            <element signature="e#12816#12847#0" expanded="false" />
+            <element signature="e#13564#13565#0" expanded="true" />
+            <element signature="e#13623#13624#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -391,14 +430,17 @@
     <entry file="file://$PROJECT_DIR$/src/ua/alevel/sea/war/BattleShips.java" />
     <entry file="file://$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1577">
-          <caret line="294" column="44" lean-forward="false" selection-start-line="294" selection-start-column="44" selection-end-line="294" selection-end-column="44" />
+        <state relative-caret-position="255">
+          <caret line="386" column="56" lean-forward="false" selection-start-line="386" selection-start-column="56" selection-end-line="386" selection-end-column="56" />
           <folding>
-            <element signature="e#2519#2553#0" expanded="false" />
-            <element signature="e#2716#2752#0" expanded="false" />
-            <element signature="e#3116#3135#0" expanded="false" />
-            <element signature="e#5906#5952#0" expanded="false" />
-            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="e#1862#1896#0" expanded="false" />
+            <element signature="e#2059#2095#0" expanded="false" />
+            <element signature="e#2459#2478#0" expanded="false" />
+            <element signature="e#4681#4794#0" expanded="false" />
+            <element signature="e#5253#5299#0" expanded="false" />
+            <element signature="e#12816#12847#0" expanded="false" />
+            <element signature="e#13564#13565#0" expanded="true" />
+            <element signature="e#13623#13624#0" expanded="true" />
           </folding>
         </state>
       </provider>

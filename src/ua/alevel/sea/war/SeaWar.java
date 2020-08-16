@@ -4,23 +4,10 @@ import java.util.Scanner;
 
 public class SeaWar {
     public static void main(String[] args) {
-        Integer[][] field = {
-                //a b  c  d  e  f  g  h  i  j
-                {0, 0, 0, 0, 0, 0, 0, 0, 1, 0}, // 1
-                {1, 0, 0, 0, 1, 0, 1, 0, 1, 0}, // 2
-                {0, 0, 0, 0, 0, 0, 1, 0, 0, 0}, // 3
-                {0, 0, 0, 0, 0, 0, 1, 0, 1, 0}, // 4
-                {1, 0, 1, 0, 0, 0, 0, 0, 1, 0}, // 5
-                {0, 0, 0, 0, 0, 0, 0, 0, 1, 0}, // 6
-                {1, 0, 0, 0, 0, 0, 0, 0, 1, 0}, // 7
-                {1, 0, 0, 0, 1, 0, 0, 0, 0, 0}, // 8
-                {0, 0, 0, 0, 1, 0, 0, 1, 1, 0}, // 9
-                {0, 0, 0, 0, 1, 0, 0, 0, 0, 0}  // 10
-        };
+        Integer[][] field = init();
         Scanner in = new Scanner(System.in);
         char alpha;
         int col, num;
-        boolean noNeibourUp, noNeibourDown, noNeibourLeft, noNeibourRight;
 
 
         boolean isWin = false;
@@ -170,8 +157,8 @@ public class SeaWar {
             }
 
 //            System.out.println(upsQuantity + " " + downsQuantity + " " + leftsQuantity + " " + rightsQuantity);
-            if (currentShot == 1 || currentShot == 2)
-                System.out.println("ship size is " + (upsQuantity + leftsQuantity + rightsQuantity + downsQuantity + 1));
+//            if (currentShot == 1 || currentShot == 2)
+//                System.out.println("ship size is " + (upsQuantity + leftsQuantity + rightsQuantity + downsQuantity + 1));
 
             switch (currentShot) {
                 case 0:
@@ -291,6 +278,7 @@ public class SeaWar {
                         for (int i = 0; i < rightsQuantity; i++) {
                             field[num][col + i + 1] = 3;
                         }
+                        System.out.println("The ship is sunk.");
                     } else {
                         field[num][col] = 2;
                     }
@@ -336,6 +324,7 @@ public class SeaWar {
                 switch (field[i][j]) {
                     case 1: // целый
                         System.out.print("o");
+//                        System.out.print(" ");
                         break;
                     case 2: // раненный
                         System.out.print("e");
@@ -356,6 +345,56 @@ public class SeaWar {
             }
             System.out.println("");
         }
+    }
+
+    public static Integer[][] init() {
+
+        Integer[][] field = new Integer[10][10];
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field.length; j++) {
+                field[i][j] = 0;
+            }
+        }
+
+//        Integer[][] field = {
+//                //a b  c  d  e  f  g  h  i  j
+//                {0, 0, 0, 0, 0, 0, 0, 0, 1, 0}, // 1
+//                {1, 0, 0, 0, 1, 0, 1, 0, 1, 0}, // 2
+//                {0, 0, 0, 0, 0, 0, 1, 0, 0, 0}, // 3
+//                {0, 0, 0, 0, 0, 0, 1, 0, 1, 0}, // 4
+//                {1, 0, 1, 0, 0, 0, 0, 0, 1, 0}, // 5
+//                {0, 0, 0, 0, 0, 0, 0, 0, 1, 0}, // 6
+//                {1, 0, 0, 0, 0, 0, 0, 0, 1, 0}, // 7
+//                {1, 0, 0, 0, 1, 0, 0, 0, 0, 0}, // 8
+//                {0, 0, 0, 0, 1, 0, 0, 1, 1, 0}, // 9
+//                {0, 0, 0, 0, 1, 0, 0, 0, 0, 0}  // 10
+//        };
+        addShips(4, field);
+
+
+        return field;
+    }
+
+    public static boolean isHorizontalShip() {
+        return ((int) (Math.random() * 2) % 2 == 0);
+    }
+
+    public static Integer[][] addShips(int size, Integer[][] field) {
+        boolean isHorizontal = isHorizontalShip();
+
+
+        int row = (int) (Math.random() * (10 - size + 1));
+        int col = (int) (Math.random() * (10 - size + 1));
+//        field[row][col] = 1;
+        for (int i = 0; i < size; i++) {
+            if (isHorizontal) {
+                field[row + i][col] = 1;
+            } else {
+                field[row][col + i] = 1;
+            }
+        }
+
+        return field;
     }
 
 
