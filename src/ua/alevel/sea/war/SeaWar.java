@@ -15,45 +15,6 @@ public class SeaWar {
 
             int currentShot = field[num][col];
 
-            int[] ups = new int[3];
-            int[] downs = new int[3];
-            int[] lefts = new int[3];
-            int[] rights = new int[3];
-
-            try {
-                for (int i = 0; i < 3; i++) {
-                    ups[i] = field[num - i - 1][col];
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-            }
-
-            try {
-                for (int i = 0; i < 3; i++) {
-                    downs[i] = field[num + i + 1][col];
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-            }
-
-            try {
-                for (int i = 0; i < 3; i++) {
-                    lefts[i] = field[num][col - i - 1];
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-            }
-
-            try {
-                for (int i = 0; i < 3; i++) {
-                    rights[i] = field[num][col + i + 1];
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-            }
-
-            int upsQuantity = onesQuantity(ups);
-            int downsQuantity = onesQuantity(downs);
-            int leftsQuantity = onesQuantity(lefts);
-            int rightsQuantity = onesQuantity(rights);
-
-
             switch (currentShot) {
                 case 0:
                     System.out.println("Miss. Try one more time.");
@@ -61,70 +22,10 @@ public class SeaWar {
                     continue;
                 case 1:
                     System.out.println("Cool shot!");
-
-                    boolean isLastShot;
-                    boolean isLastUpShot = true;
-                    boolean isLastDownShot = true;
-                    boolean isLastLeftShot = true;
-                    boolean isLastRightShot = true;
-
-                    for (int i = 0; i < upsQuantity; i++) {
-                        if (field[num - i - 1][col] != 2) {
-                            isLastUpShot = false;
-                            break;
-                        }
-                    }
-                    for (int i = 0; i < downsQuantity; i++) {
-                        if (field[num + i + 1][col] != 2) {
-                            isLastDownShot = false;
-                            break;
-                        }
-                    }
-                    for (int i = 0; i < leftsQuantity; i++) {
-                        if (field[num][col - i - 1] != 2) {
-                            isLastLeftShot = false;
-                            break;
-                        }
-                    }
-                    for (int i = 0; i < rightsQuantity; i++) {
-                        if (field[num][col + i + 1] != 2) {
-                            isLastRightShot = false;
-                            break;
-                        }
-                    }
-
-                    isLastShot = isLastUpShot && isLastDownShot && isLastLeftShot && isLastRightShot;
-
-                    if (isLastShot) {
-                        field[num][col] = 3;
-                        for (int i = 0; i < upsQuantity; i++) {
-                            field[num - i - 1][col] = 3;
-                        }
-                        for (int i = 0; i < downsQuantity; i++) {
-                            field[num + i + 1][col] = 3;
-                        }
-                        for (int i = 0; i < leftsQuantity; i++) {
-                            field[num][col - i - 1] = 3;
-                        }
-                        for (int i = 0; i < rightsQuantity; i++) {
-                            field[num][col + i + 1] = 3;
-                        }
-                        System.out.println("The ship is sunk.");
-                    } else {
-                        field[num][col] = 2;
-                    }
-
-
+                    hit(field, num, col);
                     break;
-                case 2:
-                    System.out.println("Was already hit. Try one more time.");
-                    break;
-                case 3:
-                    System.out.println("Was already sunk. Try one more time.");
-                    break;
-                case 4:
-                    System.out.println("Was already miss. Try one more time.");
-                    break;
+                default:
+                    System.out.println("Was already shot. Try one more time.");
             }
         }
         System.out.println("\n\nCongratulations! You win.");
@@ -242,7 +143,7 @@ public class SeaWar {
     }
 
     public static boolean isHorizontalShip() {
-        return ((int) (Math.random() * 2) % 2 == 0);
+        return ((int) (Math.random() * 2) % 5 == 0);
     }
 
     public static void addShips(int size, Integer[][] field) {
@@ -287,7 +188,7 @@ public class SeaWar {
         return true;
     }
 
-    public static int onesQuantity(int[] array){
+    public static int onesQuantity(int[] array) {
         int quantity = 0;
         for (int i = 0; i < 3; i++) {
             if (array[i] == 1 || array[i] == 2) quantity++;
@@ -296,7 +197,7 @@ public class SeaWar {
         return quantity;
     }
 
-    public static boolean isWin(Integer[][] field){
+    public static boolean isWin(Integer[][] field) {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field.length; j++) {
                 if (field[i][j] == 1) {
@@ -305,6 +206,98 @@ public class SeaWar {
             }
         }
         return true;
+    }
+
+    public static void hit(Integer[][] field, int num, int col) {
+        int[] ups = new int[3];
+        int[] downs = new int[3];
+        int[] lefts = new int[3];
+        int[] rights = new int[3];
+
+        try {
+            for (int i = 0; i < 3; i++) {
+                ups[i] = field[num - (i + 1)][col];
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+        try {
+            for (int i = 0; i < 3; i++) {
+                downs[i] = field[num + (i + 1)][col];
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+        try {
+            for (int i = 0; i < 3; i++) {
+                lefts[i] = field[num][col - (i + 1)];
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+        try {
+            for (int i = 0; i < 3; i++) {
+                rights[i] = field[num][col + (i + 1)];
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+
+        int upsQuantity = onesQuantity(ups);
+        int downsQuantity = onesQuantity(downs);
+        int leftsQuantity = onesQuantity(lefts);
+        int rightsQuantity = onesQuantity(rights);
+
+        boolean isLastShot;
+        boolean isLastUpShot = true;
+        boolean isLastDownShot = true;
+        boolean isLastLeftShot = true;
+        boolean isLastRightShot = true;
+
+        for (int i = 0; i < upsQuantity; i++) {
+            if (field[num - i - 1][col] != 2) {
+                isLastUpShot = false;
+                break;
+            }
+        }
+        for (int i = 0; i < downsQuantity; i++) {
+            if (field[num + i + 1][col] != 2) {
+                isLastDownShot = false;
+                break;
+            }
+        }
+        for (int i = 0; i < leftsQuantity; i++) {
+            if (field[num][col - i - 1] != 2) {
+                isLastLeftShot = false;
+                break;
+            }
+        }
+        for (int i = 0; i < rightsQuantity; i++) {
+            if (field[num][col + i + 1] != 2) {
+                isLastRightShot = false;
+                break;
+            }
+        }
+
+        isLastShot = isLastUpShot && isLastDownShot && isLastLeftShot && isLastRightShot;
+
+        if (isLastShot) {
+            field[num][col] = 3;
+            for (int i = 0; i < upsQuantity; i++) {
+                field[num - i - 1][col] = 3;
+            }
+            for (int i = 0; i < downsQuantity; i++) {
+                field[num + i + 1][col] = 3;
+            }
+            for (int i = 0; i < leftsQuantity; i++) {
+                field[num][col - i - 1] = 3;
+            }
+            for (int i = 0; i < rightsQuantity; i++) {
+                field[num][col + i + 1] = 3;
+            }
+            System.out.println("The ship is sunk.");
+        } else {
+            field[num][col] = 2;
+        }
     }
 
 }
