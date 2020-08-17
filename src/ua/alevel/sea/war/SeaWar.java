@@ -6,63 +6,12 @@ public class SeaWar {
     public static void main(String[] args) {
         Integer[][] field = init();
         Scanner in = new Scanner(System.in);
-        char alpha;
-        int col, num;
 
-
-        boolean isWin = false;
-        while (!isWin) {
+        while (!isWin(field)) {
             System.out.println("Now field is:");
             outPut(field);
-            System.out.print("\nMake a shot (letter + number) : ");
-            alpha = in.next().charAt(0);
-            if (in.hasNextInt()) {
-                num = in.nextInt() - 1;
-            } else {
-                System.out.println("Number should be from 1 to 10.");
-                in.next();
-                continue;
-            }
-
-            switch (alpha) {
-                case 'a':
-                    col = 0;
-                    break;
-                case 'b':
-                    col = 1;
-                    break;
-                case 'c':
-                    col = 2;
-                    break;
-                case 'd':
-                    col = 3;
-                    break;
-                case 'e':
-                    col = 4;
-                    break;
-                case 'f':
-                    col = 5;
-                    break;
-                case 'g':
-                    col = 6;
-                    break;
-                case 'h':
-                    col = 7;
-                    break;
-                case 'i':
-                    col = 8;
-                    break;
-                case 'j':
-                    col = 9;
-                    break;
-                default:
-                    System.out.println("Letter should be from a to j.");
-                    continue;
-            }
-            if (num > 9 || num < 0) {
-                System.out.println("Number should be from 1 to 10.");
-                continue;
-            }
+            int col = inputLetter(in);
+            int num = inputNumber(in);
 
             int currentShot = field[num][col];
 
@@ -71,14 +20,11 @@ public class SeaWar {
             int[] lefts = new int[3];
             int[] rights = new int[3];
 
-            int upsQuantity = 0, downsQuantity = 0, leftsQuantity = 0, rightsQuantity = 0;
-
             try {
                 for (int i = 0; i < 3; i++) {
                     ups[i] = field[num - i - 1][col];
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
-
             }
 
             try {
@@ -86,7 +32,6 @@ public class SeaWar {
                     downs[i] = field[num + i + 1][col];
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
-
             }
 
             try {
@@ -94,7 +39,6 @@ public class SeaWar {
                     lefts[i] = field[num][col - i - 1];
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
-
             }
 
             try {
@@ -102,26 +46,13 @@ public class SeaWar {
                     rights[i] = field[num][col + i + 1];
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
-
             }
 
+            int upsQuantity = onesQuantity(ups);
+            int downsQuantity = onesQuantity(downs);
+            int leftsQuantity = onesQuantity(lefts);
+            int rightsQuantity = onesQuantity(rights);
 
-            for (int i = 0; i < 3; i++) {
-                if (ups[i] == 1 || ups[i] == 2) upsQuantity++;
-                else break;
-            }
-            for (int i = 0; i < 3; i++) {
-                if (downs[i] == 1 || downs[i] == 2) downsQuantity++;
-                else break;
-            }
-            for (int i = 0; i < 3; i++) {
-                if (lefts[i] == 1 || lefts[i] == 2) leftsQuantity++;
-                else break;
-            }
-            for (int i = 0; i < 3; i++) {
-                if (rights[i] == 1 || rights[i] == 2) rightsQuantity++;
-                else break;
-            }
 
             switch (currentShot) {
                 case 0:
@@ -194,22 +125,61 @@ public class SeaWar {
                 case 4:
                     System.out.println("Was already miss. Try one more time.");
                     break;
-
-            }
-
-            isWin = true;
-            for (int i = 0; i < field.length; i++) {
-                for (int j = 0; j < field.length; j++) {
-                    if (field[i][j] == 1) {
-                        isWin = false; // условие продолжения цикла, т.е остались непотопленные корабли
-                        break; // достаточно одного непотопленного корабля чтобы продолжать игру
-                    }
-                }
             }
         }
         System.out.println("\n\nCongratulations! You win.");
         outPut(field);
         in.close();
+    }
+
+    public static int inputLetter(Scanner in) {
+        char alpha;
+        System.out.print("\nMake a shot (input letter) : ");
+        alpha = in.next().charAt(0);
+
+        switch (alpha) {
+            case 'a':
+                return 0;
+            case 'b':
+                return 1;
+            case 'c':
+                return 2;
+            case 'd':
+                return 3;
+            case 'e':
+                return 4;
+            case 'f':
+                return 5;
+            case 'g':
+                return 6;
+            case 'h':
+                return 7;
+            case 'i':
+                return 8;
+            case 'j':
+                return 9;
+            default:
+                System.out.println("Letter should be from a to j.");
+                return inputLetter(in);
+        }
+
+    }
+
+    public static int inputNumber(Scanner in) {
+        int num;
+        System.out.print("\nMake a shot (input number) : ");
+        if (in.hasNextInt()) {
+            num = in.nextInt() - 1;
+            if (num > 9 || num < 0) {
+                System.out.println("Number should be from 1 to 10.");
+                return inputNumber(in);
+            }
+            return num;
+        } else {
+            System.out.println("Number should be from 1 to 10.");
+            in.next();
+            return inputNumber(in);
+        }
     }
 
     public static void outPut(Integer[][] field) {
@@ -280,6 +250,7 @@ public class SeaWar {
 
         int row = (int) (Math.random() * (field.length - size + 1));
         int col = (int) (Math.random() * (field.length - size + 1));
+
         if (isShipAllowedHere(row, col, field, isHorizontal, size)) {
             for (int i = 0; i < size; i++) {
                 if (isHorizontal) {
@@ -316,6 +287,25 @@ public class SeaWar {
         return true;
     }
 
+    public static int onesQuantity(int[] array){
+        int quantity = 0;
+        for (int i = 0; i < 3; i++) {
+            if (array[i] == 1 || array[i] == 2) quantity++;
+            else break;
+        }
+        return quantity;
+    }
+
+    public static boolean isWin(Integer[][] field){
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field.length; j++) {
+                if (field[i][j] == 1) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
 }
 

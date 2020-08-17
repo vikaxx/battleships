@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15f5d7cd-797f-4f4a-b39b-fa5e3c573d95" name="Default" comment="" />
+    <list default="true" id="15f5d7cd-797f-4f4a-b39b-fa5e3c573d95" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java" afterPath="$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +17,17 @@
       <file leaf-file-name="SeaWar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4883">
-              <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+            <state relative-caret-position="-1474">
+              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
               <folding>
-                <element signature="e#8962#8963#0" expanded="true" />
-                <element signature="e#9021#9022#0" expanded="true" />
+                <element signature="method#inputLetter#0;class#SeaWar#0" expanded="false" />
+                <element signature="method#inputNumber#0;class#SeaWar#0" expanded="false" />
+                <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+                <element signature="method#init#0;class#SeaWar#0" expanded="false" />
+                <element signature="method#addShips#0;class#SeaWar#0" expanded="false" />
+                <element signature="method#isShipAllowedHere#0;class#SeaWar#0" expanded="false" />
+                <element signature="method#onesQuantity#0;class#SeaWar#0" expanded="false" />
+                <element signature="method#isWin#0;class#SeaWar#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -46,8 +54,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ua/alevel/sea/war/BattleShips.java" />
-        <option value="$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java" />
         <option value="$PROJECT_DIR$/src/ua/alevel/sea/war/s.java" />
+        <option value="$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java" />
       </list>
     </option>
   </component>
@@ -276,7 +284,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6921797" sideWeight="0.50584793" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48918468" sideWeight="0.49415204" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41763726" sideWeight="0.49415204" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -311,8 +319,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8962#8963#0" expanded="true" />
-            <element signature="e#9021#9022#0" expanded="true" />
+            <element signature="method#inputLetter#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#inputNumber#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#init#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#addShips#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isShipAllowedHere#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#onesQuantity#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isWin#0;class#SeaWar#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -322,8 +336,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8962#8963#0" expanded="true" />
-            <element signature="e#9021#9022#0" expanded="true" />
+            <element signature="method#inputLetter#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#inputNumber#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#init#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#addShips#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isShipAllowedHere#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#onesQuantity#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isWin#0;class#SeaWar#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -333,8 +353,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8962#8963#0" expanded="true" />
-            <element signature="e#9021#9022#0" expanded="true" />
+            <element signature="method#inputLetter#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#inputNumber#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#init#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#addShips#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isShipAllowedHere#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#onesQuantity#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isWin#0;class#SeaWar#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -344,8 +370,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8962#8963#0" expanded="true" />
-            <element signature="e#9021#9022#0" expanded="true" />
+            <element signature="method#inputLetter#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#inputNumber#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#init#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#addShips#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isShipAllowedHere#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#onesQuantity#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isWin#0;class#SeaWar#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -355,8 +387,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8962#8963#0" expanded="true" />
-            <element signature="e#9021#9022#0" expanded="true" />
+            <element signature="method#inputLetter#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#inputNumber#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#init#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#addShips#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isShipAllowedHere#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#onesQuantity#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isWin#0;class#SeaWar#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -366,8 +404,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8962#8963#0" expanded="true" />
-            <element signature="e#9021#9022#0" expanded="true" />
+            <element signature="method#inputLetter#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#inputNumber#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#init#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#addShips#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isShipAllowedHere#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#onesQuantity#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isWin#0;class#SeaWar#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -377,8 +421,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#8962#8963#0" expanded="true" />
-            <element signature="e#9021#9022#0" expanded="true" />
+            <element signature="method#inputLetter#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#inputNumber#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#init#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#addShips#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isShipAllowedHere#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#onesQuantity#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isWin#0;class#SeaWar#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -394,11 +444,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ua/alevel/sea/war/SeaWar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4883">
-          <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+        <state relative-caret-position="-1474">
+          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
           <folding>
-            <element signature="e#8962#8963#0" expanded="true" />
-            <element signature="e#9021#9022#0" expanded="true" />
+            <element signature="method#inputLetter#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#inputNumber#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#outPut#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#init#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#addShips#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isShipAllowedHere#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#onesQuantity#0;class#SeaWar#0" expanded="false" />
+            <element signature="method#isWin#0;class#SeaWar#0" expanded="false" />
           </folding>
         </state>
       </provider>
