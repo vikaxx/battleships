@@ -280,25 +280,63 @@ public class SeaWar {
 
         isLastShot = isLastUpShot && isLastDownShot && isLastLeftShot && isLastRightShot;
 
+        int theMostLeftNum = num; // для обвода точками потопленных кораблей
+        int theMostUpCol = col; // для обвода точками потопленных кораблей
+
         if (isLastShot) {
             field[num][col] = 3;
             for (int i = 0; i < upsQuantity; i++) {
                 field[num - i - 1][col] = 3;
+                theMostLeftNum = num - i - 1;
             }
             for (int i = 0; i < downsQuantity; i++) {
                 field[num + i + 1][col] = 3;
+
             }
             for (int i = 0; i < leftsQuantity; i++) {
                 field[num][col - i - 1] = 3;
+                theMostUpCol = col - i - 1;
             }
             for (int i = 0; i < rightsQuantity; i++) {
                 field[num][col + i + 1] = 3;
             }
             System.out.println("The ship is sunk.");
+
+
+            boolean isHorizontalShip = upsQuantity > 0 || downsQuantity > 0;
+            int shipSize = upsQuantity + downsQuantity + leftsQuantity + rightsQuantity + 1;
+
+
+            markAsMiss(theMostLeftNum, theMostUpCol, field, isHorizontalShip, shipSize);
+
         } else {
             field[num][col] = 2;
         }
     }
+
+    public static void markAsMiss(int row, int col, Integer[][] field, boolean isHorizontal, int size) {
+        System.out.println(size);
+        for (int i = -1; i < size + 1; i++) {
+            for (int j = -1; j < 2; j++) {
+                if (isHorizontal) {
+                    try {
+                        if (field[row + i][col + j] == 0) {
+                            field[row + i][col + j] = 4;
+                        }
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                    }
+                } else {
+                    try {
+                        if (field[row + j][col + i] == 0) {
+                            field[row + j][col + i] = 4;
+                        }
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                    }
+                }
+            }
+        }
+    }
+
 
 }
 
