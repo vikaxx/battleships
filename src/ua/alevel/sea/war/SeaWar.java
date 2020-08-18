@@ -87,7 +87,7 @@ public class SeaWar {
         //                               КРАСИВЫЙ ВЫВОД
         System.out.println("\n   | a | b | c | d | e | f | g | h | i | j |");
         for (int i = 0; i < field.length; i++) {
-        System.out.println(" ——— ——— ——— ——— ——— ——— ——— ——— ——— ———");
+//        System.out.println(" ——— ——— ——— ——— ——— ——— ——— ——— ——— ———");
             if (i < 9) System.out.print(" " + (i + 1));
             else System.out.print((i + 1));
             for (int j = 0; j < field.length; j++) {
